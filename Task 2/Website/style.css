@@ -1,0 +1,310 @@
+/*Importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+/* Define color and spacing variables for different screen sizes */
+:root {
+  --primary-color: #070410;
+  --secondary-color: #4DCCBD;
+  --btn-color: #EEF36A;
+
+  --small-spacing: 16px;
+  --mobile-spacing: 16px;
+  --tablet-spacing: 32px;
+  --desktop-spacing: 48px;
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+}
+
+/* Header and navigation styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: var(--primary-color);
+  padding: var(--desktop-spacing) var(--small-spacing);
+  box-shadow: 10px 10px var(--secondary-color);
+}
+
+.navbar h1 {
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-size: 3em;
+}
+
+.navlist ul {
+  display: flex;
+  list-style: none;
+}
+
+.navlist li{
+  margin: 0 var(--desktop-spacing);
+}
+
+.navlist a {
+  color: white;
+}
+
+.navbar button {
+  background-color: var(--btn-color);
+  color: var(--primary-color);
+  padding: var(--small-spacing);
+  border: none;
+  border-radius: 5px;
+  font-family: "Teko", sans-serif;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Main content styles */
+.movie-container {
+  display: grid;
+  grid-template-areas: 
+    "cardOne cardOne"
+    "cardTwo cardThree"
+    "cardFour cardFour"
+    "cardFive cardFive"
+    "cardSix cardSix";
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+img {
+  border: var(--primary-color) 5px solid;
+}
+
+/* Card One styles */
+.cardOne {
+  grid-area: cardOne;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  margin: var(--desktop-spacing) 0;
+}
+
+.cardOne img {
+  width: 900px;
+  height: 400px;
+}
+
+.textOne {
+  padding: var(--small-spacing);
+  color: white;
+  display: flex;
+  gap: var(--small-spacing);
+}
+
+button {
+  background-color: var(--btn-color);
+  color: var(--primary-color);
+  padding: var(--small-spacing) var(--desktop-spacing);
+  border: none;
+  border-radius: 5px;
+  font-family: "Teko", sans-serif;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Card Two and Three styles */
+.cardTwo {
+  grid-area: cardTwo;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 420px;
+}
+
+.cardThree {
+  grid-area: cardThree;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 420px;
+  margin-left: auto;
+}
+
+.cardTwo, .cardThree {
+  margin-bottom: var(--desktop-spacing);
+}
+
+.cardTwo img, .cardThree img {
+  width: 420px;
+  height: 420px;
+}
+
+.textTwo, .textThree{
+  padding: var(--small-spacing);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.textTwo button{
+  margin-top: var(--small-spacing);
+}
+
+.textThree button{
+  margin-top: 45px;
+}
+
+/* Card Four, Five, and Six styles */
+.cardFour {
+  grid-area: cardFour;
+  display: flex;
+  background-color: var(--primary-color);
+  margin-bottom: var(--desktop-spacing);
+}
+
+.cardFour img, .cardFive img, .cardSix img {
+  width: 420px;
+  height: 100%;
+}
+
+.textFour {
+  padding: var(--small-spacing);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardFive { 
+  grid-area: cardFive;
+  display: flex;
+  background-color: var(--primary-color);
+  margin-bottom: var(--desktop-spacing);
+}
+
+.cardSix {
+  grid-area: cardSix;
+  display: flex;
+  background-color: var(--primary-color);
+  margin-bottom: var(--desktop-spacing);
+}
+
+/* Box shadow for different cards */
+.cardOne, .cardTwo, .cardThree, .cardFour, .cardFive, .cardSix {
+  box-shadow: 10px 10px var(--secondary-color);
+}
+
+/* Media queries for Tablet design */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    margin-bottom: var(--tablet-spacing);
+  }
+  
+  .navlist li {
+    margin: 0 var(--small-spacing);
+  }
+
+  .movie-container {
+    grid-template-areas: 
+      "cardOne cardTwo"
+      "cardThree cardFour"
+      "cardFive cardSix";
+    width: 670px;
+    margin: 0 auto;
+    grid-row-gap: var(--tablet-spacing);
+  }
+
+  /* Card One, Two, Three, Four, Five, and Six styles */
+  .cardOne, .cardTwo, .cardThree, .cardFour, .cardFive, .cardSix {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    height: 100%;
+  }
+
+  /* Card One, Two, Three, Four, Five, and Six image styles */
+  .cardOne img, .cardTwo img, .cardThree img, .cardFour img, .cardFive img, .cardSix img {
+    width: 300px;
+    height: 100%;
+  }
+
+  .textOne, .textTwo, .textThree, .textFour {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardOne button, .cardTwo button, .cardThree button, .cardFour button, .cardFive button, .cardSix button {
+    margin-top: var(--tablet-spacing);
+  }
+
+  .cardTwo button {
+    margin-top: 48px;
+  }
+
+  .cardThree button {
+    margin-top: 90px;
+  }
+
+  .cardFive button {
+    margin-top: 119px;
+  }
+
+  body {
+    padding-bottom: var(--tablet-spacing);
+  }
+}
+
+/* Media queries for Mobile design */
+@media screen and (max-width: 720px) {
+  .navbar {
+    margin-bottom: var(--mobile-spacing);
+    box-shadow: none;
+  }
+
+  .navbar h1 {
+    font-size: 2em;
+  }
+
+  .navlist {
+    display: none;
+  }
+
+  .movie-container {
+    grid-template-areas: 
+      "cardOne"
+      "cardTwo"
+      "cardThree"
+      "cardFour"
+      "cardFive"
+      "cardSix";
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-row-gap: var(--mobile-spacing);
+  }
+
+  .cardOne, .cardTwo, .cardThree, .cardFour, .cardFive, .cardSix {
+    width: 360px;
+  }
+
+  .cardOne img, .cardTwo img, .cardThree img, .cardFour img, .cardFive img, .cardSix img {
+    width: 360px;
+  }
+
+  .cardOne, .cardTwo, .cardThree, .cardFour, .cardFive, .cardSix {
+    box-shadow: none;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
